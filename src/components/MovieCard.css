@@ -2,28 +2,43 @@
 
 .movie-card {
   display: flex;
+  flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin: 16px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Ensures uniform width */
+  height: 450px; /* Ensures uniform height */
 }
 
 .movie-poster {
-  width: 150px;
+  width: 100%;
+  height: 180px; /* Fixed height for posters */
   object-fit: cover;
 }
 
 .movie-details {
   padding: 16px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .movie-title {
   margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .movie-synopsis {
-  margin-top: 12px;
+  margin-top: 8px;
   color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  height: 60px; /* Ensures uniform text space */
 }
